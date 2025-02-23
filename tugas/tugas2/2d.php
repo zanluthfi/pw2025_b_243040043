@@ -37,11 +37,11 @@
                 } else {
                     echo "<div class=\"col\"></div>";
                 }
-                if ($i % 5 == 0) {
+                if ($i == 25) {
+                    echo "</div>";
+                } else if ($i % 5 == 0) {
                     echo "</div>";
                     echo "<div class=\"row\">";
-                } else if ($i == 25) {
-                    echo "</div>";
                 }
             }
         ?>
