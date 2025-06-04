@@ -1,4 +1,5 @@
 <?php
+
 $conn = mysqli_connect('localhost', 'root', '', 'pw2024_243040043');
 
 function query($query) {
@@ -10,4 +11,5 @@ function query($query) {
     }
     return $rows;
 }
+
 ?>

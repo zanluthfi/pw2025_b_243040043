@@ -12,8 +12,10 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
 </head>
 
 <body>
+
   <h1>Daftar Mahasiswa</h1>
-  <a href="tambah.php">Tambah data mahasiswa</a>
+
+  <a href="tambah.php">tambah data</a>
   <br><br>
   <table border="1" cellspacing="0" cellpadding="10">
     <tr>
@@ -25,11 +27,11 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
       <th>Gambar</th>
       <th>Aksi</th>
     </tr>
-    <?php $i = 1;
+    <?php $id = 1;
     foreach ($mahasiswa as $row) : ?>
       <tr>
-        <td><?= $i++ ?></td>
-        <td><?= $row['nama'] ?> </td>
+        <td><?= $id++ ?></td>
+        <td><?= $row['nama'] ?></td>
         <td><?= $row['nrp'] ?></td>
         <td><?= $row['email'] ?></td>
         <td><?= $row['jurusan'] ?></td>
@@ -37,7 +39,8 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
           <img src="img/<?= $row['gambar'] ?>" width="50">
         </td>
         <td>
-          <a href="">ubah</a> | <a href="">hapus</a>
+          <a href="">ubah</a> |
+          <a href="hapus.php?id=<?= $row['id'] ?>" onclick="return confirm('yakin?')">hapus</a>
         </td>
       </tr>
     <?php endforeach; ?>
